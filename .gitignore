@@ -7,7 +7,6 @@
 *.ipch
 *.obj
 *.exe
-*.dll
 *.lib
 *.log
 *.tlog
