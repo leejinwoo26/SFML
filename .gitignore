@@ -1,0 +1,29 @@
+# Visual Studio 관련 파일 무시
+.vs/
+*.suo
+*.user
+*.cache
+*.pdb
+*.ipch
+*.obj
+*.exe
+*.dll
+*.lib
+*.log
+*.tlog
+*.ilk
+*.pch
+*.sdf
+*.aps
+*.ncb
+*.opendb
+*.VC.db
+
+# CMake 빌드 폴더
+CMakeFiles/
+CMakeCache.txt
+
+# 빌드 폴더
+Debug/
+Release/
+x64/
