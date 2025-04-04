@@ -1,4 +1,7 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
+
+using namespace std;
 
 class Game
 {
@@ -13,7 +16,9 @@ private:
         bool isPressed);
 private:
     sf::RenderWindow mWindow;
-    sf::CircleShape mPlayer;
+    sf::Time TimePerFrame;
+    sf::Texture mTexture;
+    sf::Sprite mPlayer;
     bool mIsMovingUp;
     bool mIsMovingDown;
     bool mIsMovingLeft;
@@ -27,10 +32,10 @@ Game::Game()
     , mPlayer() 
     , PlayerSpeed(500.f) 
     , mIsMovingUp(false), mIsMovingDown(false), mIsMovingLeft(false), mIsMovingRight(false)
+    , TimePerFrame()
+    , mTexture()
 {
-    mPlayer.setRadius(40.f);
-    mPlayer.setPosition(100.f, 100.f);
-    mPlayer.setFillColor(sf::Color::Cyan);
+   
 }
 void Game::run()
 {
@@ -90,7 +95,13 @@ void Game::update(sf::Time deltaTime)
 }
 void Game::render()
 {
-    mWindow.clear();
+    if (!mTexture.loadFromFile("Textures/mother.jpg"))
+    {
+    }
+    mPlayer.setTexture(mTexture);
+    mPlayer.setScale(0.5, 0.5);
+
+    mWindow.clear();    
     mWindow.draw(mPlayer);
     mWindow.display();
 }
